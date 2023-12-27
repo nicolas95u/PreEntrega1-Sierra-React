@@ -4,7 +4,7 @@ const CartWidget = () => {
   return (
     <div>
       <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        <strong> 4 </strong>  
+        <strong> 3 </strong>  
         </div>
   )
 }

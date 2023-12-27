@@ -25,7 +25,7 @@ function App() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Boton que no hace nada
+              Boton educativo
             </a>
           </div>
         </div>

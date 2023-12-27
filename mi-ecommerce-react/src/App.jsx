@@ -1,11 +1,13 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import NavBar from './Componentes/NavBar/NavBar';
+import ItemListContainer from './Componentes/ItemListContainer/ItemListContainer';
 
 function App() {
   return (
     <div>
       <NavBar />
+      <ItemListContainer greeting={"Hola Cliente"} />
       <div className="container mt-5">
         <header className="text-center">
           <h1>Mi Proyecto React con Bootstrap (por ahora) </h1>
@@ -29,6 +31,7 @@ function App() {
         </div>
       </div>
     </div>
+    
   );
 }
 

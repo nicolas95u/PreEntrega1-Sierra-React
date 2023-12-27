@@ -1,12 +1,16 @@
-import React from 'react'
+import React from 'react';
 
 const CartWidget = () => {
   return (
-    <div>
-      <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-        <strong> 3 </strong>  
-        </div>
-  )
+    <div style={{ display: 'flex', alignItems: 'center' }}>
+      <img
+        src="./img/carrito.png"
+        alt="carrito"
+        style={{ width: '30px', margin: '20px' }}
+      />
+      <strong style={{ color: 'black' }}>3</strong>
+    </div>
+  );
 }
 
-export default CartWidget
+export default CartWidget;

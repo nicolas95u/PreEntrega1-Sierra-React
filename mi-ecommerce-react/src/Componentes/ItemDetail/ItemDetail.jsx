@@ -1,8 +1,9 @@
 import React from 'react';
+import './ItemDetail.css'; 
 
 const ItemDetail = ({ id, nombre, precio, img }) => {
   return (
-    <div className='contenedorItem'>
+    <div className='contenedorItemDetalle'>
       <h2>Nombre: {nombre} </h2>
       <h3>Precio: {precio} </h3>
       <p>ID: {id} </p>

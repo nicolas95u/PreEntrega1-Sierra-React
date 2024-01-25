@@ -1,0 +1,22 @@
+
+
+
+.contenedorProductos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+  }
+  
+
+  .producto-card {
+    width: 18rem; 
+  }
+  
+  
+  .producto-imagen {
+    max-height: 200px; 
+    object-fit: contain;
+    border-radius: 5px;
+  }
+  

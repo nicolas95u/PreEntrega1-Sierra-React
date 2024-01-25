@@ -2,27 +2,32 @@ import React from 'react';
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import { useNavigate } from 'react-router-dom';
+import './ItemList.css'; 
 
 const ItemList = ({ productos }) => {
-  let navigate = useNavigate();
-      const handleOnClick = (producto) => {
-        navigate(`/item/${producto.id}`);
-      }
+  const navigate = useNavigate();
+
+  const handleVerDetalles = (id) => {
+    
+    navigate(`/item/${id}`);
+  };
+
   return (
     <div className="contenedorProductos">
-      {productos.map(producto => (
-        <Card key={producto.id} style={{ width: '18rem' }}>
-          <Card.Img variant="top" src={producto.img} />
+      {productos.map(prod => (
+        <Card key={prod.id} className="producto-card">
+          <Card.Img variant="top" src={prod.img} className="producto-imagen" />
           <Card.Body>
-            <Card.Title>{producto.nombre}</Card.Title>
+            <Card.Title>{prod.nombre}</Card.Title>
             <Card.Text>
-              Precio: ${producto.precio}
+              Precio: ${prod.precio}
             </Card.Text>
-            <Button variant="primary" onClick={()=>handleOnClick(producto)}>Ver detalles</Button>
+            <Button variant="primary" onClick={() => handleVerDetalles(prod.id)}>
+              Ver detalles
+            </Button>
           </Card.Body>
         </Card>
       ))}
-      
     </div>
   );
 }

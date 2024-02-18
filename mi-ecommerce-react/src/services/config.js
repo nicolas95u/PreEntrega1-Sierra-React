@@ -6,7 +6,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCpVeEVJD2Q2LXR7VPoTQ2sPuUPFDSCkRQ",
+  apiKey: import.meta.env.VITE_API_KEY_FIREBASE_CONFIG,
   authDomain: "mi-ecommerce-react-806c0.firebaseapp.com",
   projectId: "mi-ecommerce-react-806c0",
   storageBucket: "mi-ecommerce-react-806c0.appspot.com",

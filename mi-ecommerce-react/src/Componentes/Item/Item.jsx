@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Item = ({id, nombre, precio, img}) => {
+  console.log("IMAGEN", img)
   return (
     <div className='cardProducto'>
         <img src={img} alt={nombre} />

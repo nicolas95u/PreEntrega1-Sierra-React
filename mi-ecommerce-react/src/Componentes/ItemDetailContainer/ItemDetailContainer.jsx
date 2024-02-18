@@ -1,28 +1,39 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
+// import { getUnProducto } from "../../asyncmock";
 import ItemDetail from "../ItemDetail/ItemDetail";
-import { getUnProducto } from "../../asyncmock";
 import { useParams } from "react-router-dom";
-import './ItemDetailContainer.css';
+import { db } from "../../services/config";
+import {getDoc, doc} from "firebase/firestore";
 
 const ItemDetailContainer = () => {
-  const [producto, setProducto] = useState(null);
-  const { idItem } = useParams();
+    const [producto, setProducto] = useState(null);
+    const {idItem} = useParams();
 
-  useEffect(() => {
-    getUnProducto(idItem)
-      .then(res => setProducto(res))
-      .catch(error => console.log(error));
-  }, [idItem]);
+    useEffect(() => {
+        const nuevoDoc = doc(db, "productos", idItem);
+
+        getDoc(nuevoDoc)
+          .then(res => {
+            const data = res.data();
+            const nuevoProducto = {...data, id: res.id};
+            setProducto(nuevoProducto);
+
+          })
+          .catch(error => console.log("Cualquier cosa", error))
+    }, [idItem]) 
+
+
+
+    // useEffect( () => {
+    //     getUnProducto(idItem)
+    //         .then(res => setProducto(res))
+    // }, [idItem])
 
   return (
     <div>
-      {producto ? (
-        <ItemDetail {...producto} />
-      ) : (
-        <p>Cargando detalle del producto...</p>
-      )}
+        <ItemDetail  {...producto} />
     </div>
-  );
+  )
 }
 
-export default ItemDetailContainer;
+export default ItemDetailContainer
